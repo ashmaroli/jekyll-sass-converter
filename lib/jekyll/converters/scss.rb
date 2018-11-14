@@ -97,7 +97,11 @@ module Jekyll
           end
         end
 
-        paths.select { |path| File.directory?(path) }
+        result = paths.select { |path| File.directory?(path) }
+        result.each do |path|
+          Jekyll.logger.info "Sass Load Path:", path.cyan
+        end
+        result
       end
 
       def allow_caching?
