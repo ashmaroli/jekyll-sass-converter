@@ -4,6 +4,9 @@ clone_depth: 10
 
 build: off
 
+before_install:
+  - gem update --system
+
 install:
   - SET PATH=C:\Ruby%RUBY_FOLDER_VER%-x64\bin;%PATH%
   - echo ${{ build }}
