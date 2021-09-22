@@ -6,6 +6,10 @@ build: off
 
 install:
   - SET PATH=C:\Ruby%RUBY_FOLDER_VER%-x64\bin;%PATH%
+  - echo ${{ build }}
+  - ruby --version
+  - gem --version
+  - bundler --version
   - bundle install --retry 5 --jobs=%NUMBER_OF_PROCESSORS% --clean --path vendor\bundle
 
 environment:
